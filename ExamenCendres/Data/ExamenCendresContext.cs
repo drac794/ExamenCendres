@@ -29,5 +29,10 @@ public class ExamenCendresContext : DbContext
             .HasForeignKey("RegioID")          
             .IsRequired(false)                 
             .OnDelete(DeleteBehavior.SetNull); 
+        
+        modelBuilder.Entity<Zona>()
+            .Property(z => z.Bioma)
+            .HasConversion<string>();
+
     }
 }
